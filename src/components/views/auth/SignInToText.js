@@ -27,36 +27,11 @@ export default class SignInToText extends React.PureComponent {
     };
 
     render() {
-        let signInToText = _t('Sign in to your Matrix account on %(serverName)s', {
-            serverName: this.props.serverConfig.hsName,
-        });
-        if (this.props.serverConfig.hsNameIsDifferent) {
-            const TextWithTooltip = sdk.getComponent("elements.TextWithTooltip");
-
-            signInToText = _t('Sign in to your Matrix account on <underlinedServerName />', {}, {
-                'underlinedServerName': () => {
-                    return <TextWithTooltip
-                        class="mx_Login_underlinedServerName"
-                        tooltip={this.props.serverConfig.hsUrl}
-                    >
-                        {this.props.serverConfig.hsName}
-                    </TextWithTooltip>;
-                },
-            });
-        }
-
+        let signInToText = 'sign in to homeserver: kaija.us';
         let editLink = null;
-        if (this.props.onEditServerDetailsClick) {
-            editLink = <a className="mx_AuthBody_editServerDetails"
-                          href="#" onClick={this.props.onEditServerDetailsClick}
-            >
-                {_t('Change')}
-            </a>;
-        }
-
-        return <h3>
+	return <h3>
             {signInToText}
-            {editLink}
+	    {editLink}
         </h3>;
     }
 }

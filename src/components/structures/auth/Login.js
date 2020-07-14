@@ -674,16 +674,16 @@ export default createReactClass({
             footer = <div className="mx_AuthBody_paddedFooter">
                 <div className="mx_AuthBody_paddedFooter_title">
                     <InlineSpinner w={20} h={20} />
-                    { this.props.isSyncing ? _t("Syncing...") : _t("Signing In...") }
+                    { this.props.isSyncing ? "syncing..." : "signing in..." }
                 </div>
                 { this.props.isSyncing && <div className="mx_AuthBody_paddedFooter_subtitle">
-                    {_t("If you've joined lots of rooms, this might take a while")}
+                    {"if you've joined lots of rooms, this might take a while"}
                 </div> }
             </div>;
         } else {
             footer = (
                 <a className="mx_AuthBody_changeFlow" onClick={this.onTryRegisterClick} href="#">
-                    { _t('Create account') }
+                    { 'create account' }
                 </a>
             );
         }
@@ -693,7 +693,7 @@ export default createReactClass({
                 <AuthHeader disableLanguageSelector={this.props.isSyncing || this.state.busyLoggingIn} />
                 <AuthBody>
                     <h2>
-                        {_t('Sign in')}
+                        {'enter'}
                         {loader}
                     </h2>
                     { errorTextSection }

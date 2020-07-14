@@ -18,8 +18,8 @@ limitations under the License.
 .mx_AuthBody {
     width: 500px;
     font-size: $font-12px;
-    color: $authpage-secondary-color;
-    background-color: $authpage-body-bg-color;
+    color: #ffffff;
+    background-color: #000000;
     border-radius: 0 4px 4px 0;
     padding: 25px 60px;
     box-sizing: border-box;
@@ -28,13 +28,13 @@ limitations under the License.
         font-size: $font-24px;
         font-weight: 600;
         margin-top: 8px;
-        color: $authpage-primary-color;
+        color: #ffffff;
     }
 
     h3 {
         font-size: $font-14px;
         font-weight: 600;
-        color: $authpage-primary-color;
+        color: #ffffff;
     }
 
     a:link,
@@ -45,17 +45,17 @@ limitations under the License.
 
     input[type=text],
     input[type=password] {
-        color: $authpage-primary-color;
+        color: #ffffff;
     }
 
     .mx_Field input,
     .mx_Field select {
-        color: $authpage-primary-color;
-        background-color: $authpage-body-bg-color;
+        color: #ffffff;
+        background-color: #000000;
     }
 
     .mx_Field label {
-        color: $authpage-primary-color;
+        color: #ffffff;
     }
 
     .mx_Field_labelAlwaysTopLeft label,
@@ -64,11 +64,11 @@ limitations under the License.
     .mx_Field input:not(:placeholder-shown) + label,
     .mx_Field textarea:focus + label,
     .mx_Field textarea:not(:placeholder-shown) + label {
-        background-color: $authpage-body-bg-color;
+        background-color: #000000;
     }
 
     input.error {
-        color: $warning-color;
+        color: #fd0202;
     }
 
     .mx_Field input {
@@ -76,19 +76,19 @@ limitations under the License.
     }
 
     .mx_Field_select::before {
-        background-color: $authpage-primary-color;
+        background-color: #ffffff;
     }
 
     .mx_Dropdown {
-        color: $authpage-primary-color;
+        color: #ffffff;
     }
 
     .mx_Dropdown_arrow {
-        background: $authpage-primary-color;
+        background: #ffffff;
     }
 
     .mx_Dropdown_menu {
-        background-color: $authpage-body-bg-color;
+        background-color: #000000;
 
         .mx_Dropdown_option_highlight {
             background-color: $authpage-focus-bg-color;
@@ -141,6 +141,7 @@ limitations under the License.
     display: block;
     text-align: center;
     width: 100%;
+    color: #e52121;
 }
 
 .mx_AuthBody_spinner {

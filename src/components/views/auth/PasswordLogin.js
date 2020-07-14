@@ -341,7 +341,6 @@ export default class PasswordLogin extends React.Component {
                         disabled={this.props.disableSubmit}
                         autoFocus={autoFocusPassword}
                     />
-                    {forgotPasswordJsx}
                     { !this.props.busy && <input className="mx_Login_submit"
                         type="submit"
                         value={_t('Sign in')}

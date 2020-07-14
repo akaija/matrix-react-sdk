@@ -392,8 +392,7 @@ export default createReactClass({
             <AuthPage>
                 <AuthHeader />
                 <AuthBody>
-                    <h2> { _t('Set a new password') } </h2>
-                    {resetPasswordJsx}
+                    <h2> { 'TO RESET PASSWORD CONTACT: chat@kaija.us' } </h2>
                 </AuthBody>
             </AuthPage>
         );

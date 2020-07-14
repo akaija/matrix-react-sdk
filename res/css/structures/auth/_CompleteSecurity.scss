@@ -44,7 +44,7 @@ limitations under the License.
             width: 48px;
             left: 56px;
             top: 0;
-            background-color: $muted-fg-color;
+            background-color: #000000;
             mask-repeat: no-repeat;
             mask-size: contain;
         }
@@ -65,7 +65,7 @@ limitations under the License.
     p {
         margin-top: 16px;
         font-size: $font-12px;
-        color: $muted-fg-color;
+        color: #000000;
         text-align: center;
     }
 }
@@ -82,7 +82,7 @@ limitations under the License.
 }
 
 .mx_CompleteSecurity_waiting {
-    color: $notice-secondary-color;
+    color: #d43737;
 }
 
 .mx_CompleteSecurity_actionRow {
@@ -94,7 +94,7 @@ limitations under the License.
         margin-inline-start: 18px;
 
         &.warning {
-            color: $warning-color;
+            color: #fd0202;
         }
     }
 }

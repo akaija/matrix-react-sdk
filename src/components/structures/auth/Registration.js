@@ -683,12 +683,12 @@ export default createReactClass({
                 )}</h3>;
             }
             body = <div>
-                <h2>{_t("Registration Successful")}</h2>
+                <h2>{"registration successful"}</h2>
                 { regDoneText }
             </div>;
         } else {
             body = <div>
-                <h2>{ _t('Create your account') }</h2>
+                <h2>{ 'create account' }</h2>
                 { errorText }
                 { serverDeadSection }
                 { this.renderServerComponent() }

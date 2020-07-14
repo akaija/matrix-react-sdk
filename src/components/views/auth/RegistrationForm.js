@@ -285,14 +285,14 @@ export default createReactClass({
             {
                 key: "required",
                 test: ({ value, allowEmpty }) => allowEmpty || !!value,
-                invalid: () => _t("Confirm password"),
+                invalid: () => "confirm password",
             },
             {
                 key: "match",
                 test: function({ value }) {
                     return !value || value === this.state.password;
                 },
-                invalid: () => _t("Passwords don't match"),
+                invalid: () => "passwords don't match",
             },
          ],
     }),
@@ -352,12 +352,12 @@ export default createReactClass({
             {
                 key: "required",
                 test: ({ value, allowEmpty }) => allowEmpty || !!value,
-                invalid: () => _t("Enter username"),
+                invalid: () => "enter username",
             },
             {
                 key: "safeLocalpart",
                 test: ({ value }) => !value || SAFE_LOCALPART_REGEX.test(value),
-                invalid: () => _t("Some characters not allowed"),
+                invalid: () => "some characters not allowed",
             },
         ],
     }),
@@ -446,7 +446,7 @@ export default createReactClass({
             ref={field => this[FIELD_PASSWORD_CONFIRM] = field}
             type="password"
             autoComplete="new-password"
-            label={_t("Confirm")}
+            label={"confirm"}
             value={this.state.passwordConfirm}
             onChange={this.onPasswordConfirmChange}
             onValidate={this.onPasswordConfirmValidate}
@@ -486,7 +486,7 @@ export default createReactClass({
             ref={field => this[FIELD_USERNAME] = field}
             type="text"
             autoFocus={true}
-            label={_t("Username")}
+            label={"username"}
             value={this.state.username}
             onChange={this.onUsernameChange}
             onValidate={this.onUsernameValidate}
@@ -494,71 +494,18 @@ export default createReactClass({
     },
 
     render: function() {
-        let yourMatrixAccountText = _t('Create your Matrix account on %(serverName)s', {
-            serverName: this.props.serverConfig.hsName,
-        });
-        if (this.props.serverConfig.hsNameIsDifferent) {
-            const TextWithTooltip = sdk.getComponent("elements.TextWithTooltip");
+        let yourMatrixAccountText = 'create account on homeserver: kaij.us';
 
-            yourMatrixAccountText = _t('Create your Matrix account on <underlinedServerName />', {}, {
-                'underlinedServerName': () => {
-                    return <TextWithTooltip
-                        class="mx_Login_underlinedServerName"
-                        tooltip={this.props.serverConfig.hsUrl}
-                    >
-                        {this.props.serverConfig.hsName}
-                    </TextWithTooltip>;
-                },
-            });
-        }
-
-        let editLink = null;
-        if (this.props.onEditServerDetailsClick) {
-            editLink = <a className="mx_AuthBody_editServerDetails"
-                href="#" onClick={this.props.onEditServerDetailsClick}
-            >
-                {_t('Change')}
-            </a>;
-        }
-
-        const registerButton = (
-            <input className="mx_Login_submit" type="submit" value={_t("Register")} disabled={!this.props.canSubmit} />
+	const registerButton = (
+            <input className="mx_Login_submit" type="submit" value={"register"} disabled={!this.props.canSubmit} />
         );
 
         let emailHelperText = null;
-        if (this._showEmail()) {
-            if (this._showPhoneNumber()) {
-                emailHelperText = <div>
-                    {_t(
-                        "Set an email for account recovery. " +
-                        "Use email or phone to optionally be discoverable by existing contacts.",
-                    )}
-                </div>;
-            } else {
-                emailHelperText = <div>
-                    {_t(
-                        "Set an email for account recovery. " +
-                        "Use email to optionally be discoverable by existing contacts.",
-                    )}
-                </div>;
-            }
-        }
-        const haveIs = Boolean(this.props.serverConfig.isUrl);
         let noIsText = null;
-        if (this.props.serverRequiresIdServer && !haveIs) {
-            noIsText = <div>
-                {_t(
-                    "No identity server is configured so you cannot add an email address in order to " +
-                    "reset your password in the future.",
-                )}
-            </div>;
-        }
-
         return (
             <div>
                 <h3>
                     {yourMatrixAccountText}
-                    {editLink}
                 </h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="mx_AuthBody_fieldRow">
@@ -568,12 +515,6 @@ export default createReactClass({
                         {this.renderPassword()}
                         {this.renderPasswordConfirm()}
                     </div>
-                    <div className="mx_AuthBody_fieldRow">
-                        {this.renderEmail()}
-                        {this.renderPhoneNumber()}
-                    </div>
-                    { emailHelperText }
-                    { noIsText }
                     { registerButton }
                 </form>
             </div>

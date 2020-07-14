@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-$PassphraseStrengthHigh: $accent-color;
-$PassphraseStrengthMedium: $username-variant5-color;
-$PassphraseStrengthLow: $notice-primary-color;
+$PassphraseStrengthHigh: #008000;
+$PassphraseStrengthMedium: #ffff00;
+$PassphraseStrengthLow: #ff0000;
 
 progress.mx_PassphraseField_progress {
     appearance: none;

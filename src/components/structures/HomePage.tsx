@@ -38,7 +38,7 @@ const HomePage = () => {
     }
 
     const brandingConfig = config.branding;
-    let logoUrl = "themes/riot/img/logos/riot-logo.svg";
+    let logoUrl = "themes/kaija/img/logos/logo.png";
     if (brandingConfig && brandingConfig.authHeaderLogoUrl) {
         logoUrl = brandingConfig.authHeaderLogoUrl;
     }

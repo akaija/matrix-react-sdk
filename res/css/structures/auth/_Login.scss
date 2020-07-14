@@ -22,6 +22,7 @@ limitations under the License.
     margin-bottom: 24px;
     box-sizing: border-box;
     text-align: center;
+    background-color: #e52121;
 }
 
 .mx_Login_submit:hover {
@@ -36,7 +37,7 @@ limitations under the License.
 .mx_AuthBody a.mx_Login_sso_link:link,
 .mx_AuthBody a.mx_Login_sso_link:hover,
 .mx_AuthBody a.mx_Login_sso_link:visited {
-    color: $button-primary-fg-color;
+    color: #e52121;
 }
 
 .mx_Login_loader {
@@ -56,7 +57,7 @@ limitations under the License.
 }
 
 .mx_Login_error {
-    color: $warning-color;
+    color: #fd0202;
     font-weight: bold;
     text-align: center;
     margin-top: 12px;
@@ -69,13 +70,13 @@ limitations under the License.
 }
 
 .mx_Login_error.mx_Login_serverError.mx_Login_serverErrorNonFatal {
-    color: $orange-warning-color;
+    color: #763a3a;
 }
 
 .mx_Login_type_container {
     display: flex;
     align-items: center;
-    color: $authpage-primary-color;
+    color: #ffffff;
 
     .mx_Field {
         margin: 0;
